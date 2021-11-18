@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* .wrapper{
+            display: flex;
+            justify-content: center;
+            padding: 30px;
+        }
+        .register{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 10px 20px 10px 20px;
+            width: 300px;
+            background-color: rgb(49, 46, 46);
+            margin-right: 50px;
+        }
+    
+        label{
+            color: white;
+            padding: 5px;
+        }
+        .login{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 10px 20px 10px 20px;
+            width: 300px;
+            background-color: rgb(49, 46, 46);
+        }
+        form{
+            height: inherit;
+        }
+        input{
+            border-radius: 5px;
+        }
+        .register button{
+            background-color: blue;
+            color: white;
+            width: 60px;
+            margin-top: 5px;
+        }
+        .register h1{
+            color: blue;
+        }
+        .login h1{
+            color: green;
+        }
+        .login button{
+            background-color: green;
+            color: white;
+            width: 60px;
+            margin-top: 5px;
+        }
+        p{
+            color: white;
+        } */
+
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="register">
+            <form action="/users/register", method="post">
+                <h1>Register</h1>
+                {% with messages = get_flashed_messages(category_filter=['register']) %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <p>{{message}}</p>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+                <label for="first_name">First Name</label>
+                <input type="text" name="first_name">
+                
+                <label for="last_name">Last Name</label>
+                <input type="text" name="last_name">
+                
+                <label for="email">Email</label>
+                <input type="email" name="email">
+                
+                <label for="password">Password</label>
+                <input type="password" name="password">
+                
+                <label for="confirm_password">Password</label>
+                <input type="password" name="confirm_password">
+                
+                <button>Register</button>
+            </form>
+        </div>
+        <div class="login">
+            <form action="/users/login", method="post">
+                <h1>login</h1>
+                {% with messages = get_flashed_messages(category_filter=['login']) %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <p>{{message}}</p>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+                <label for="email">Email</label>
+                <input type="email" name="email">
+            
+                <label for="password">Password</label>
+                <input type="password" name="password">
+                <button>login</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="display:flex; justify-content: space-between;">
+        <h1>Edit {{user.id}}</h1>
+        <a href="/user">Home</a>
+    </div>
+    <form action="/user/update/{{user.id}}" method="POST">
+        <label for="first_name" style="display: block;">First Name</label>
+        <input type="text" value="{{user.first_name}}" name="first_name"style="display: block;">
+
+        <label for="last_name"style="display: block;">Last Name</label>
+        <input type="text" value="{{user.last_name}}" name="last_name"style="display: block;">
+
+        <label for="email"style="display: block;">Email</label>
+        <input type="email" value="{{user.email}}" name="email" style="display: block;">
+        
+        <button style="display: block;">Update</button>
+        <a href="/user/show/{{user.id}}">show user</a>
+
+    </form>
+</body>
+</html>

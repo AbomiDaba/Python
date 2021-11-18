@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <title>Result</title>
+    <style>
+        .wrapper{
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 200px;
+            background-color: rgb(66, 60, 60);
+            padding: 5px 30px 20px 30px;
+        }
+        p{
+            color: white;
+        }
+        h1{
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <h1>Summited Info</h1>
+        <div class="name">
+            <p>Name:</p>
+            <p>{{survey.name}}</p>
+        </div>
+        <div class="dojo_location">
+            <p>Dojo Location:</p>
+            <p>{{survey.location}}</p>
+        </div>
+        <div class="language">
+            <p>Favorite Language:</p>
+            <p>{{survey.language}}</p>
+        </div>
+        <div class="comment">
+            <p>Comment:</p>
+            <p>{{survey.comments}}</p>
+        </div>
+        <form action="/">
+            <button>GO back</button>
+        </form>
+    </div>
+</body>
+</html>

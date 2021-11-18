@@ -1,0 +1,28 @@
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 300px;
+    margin: auto;
+}
+button{
+    width: 100px;
+    margin-top: 5px;
+    background-color: orangered;
+}
+h1{
+    color: orangered;
+}
+label{
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+.header{
+    display: flex;
+    justify-content: space-around;
+}
+form{
+    width: 500px;
+    margin: auto;
+    vertical-align: top;
+}

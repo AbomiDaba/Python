@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename = 'css/style.css')}}">
+    <title>Dojo Survey</title>
+    <style>
+        .form_wrapper{
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 200px;
+            background-color: rgb(66, 60, 60);
+            padding: 5px 30px 20px 30px;
+        }
+        label{
+            color: white;
+            margin: 5px 0;
+        }
+        button{
+            color: black;
+            background-color: yellow;
+            width: 80px;
+            margin-top: 10px;
+        }
+        h1{
+            color: yellow
+        }
+        input, select, textarea{
+            border-radius: 5px;
+        }
+        p{
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    
+    <form action="/process" method="POST">
+        <div class="form_wrapper">
+            <h1>Dojo Survey</h1>
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <p>{{message}}</p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+            <label for="name">Your Name</label>
+            <input type="text" name="name">
+        
+            <label for="location">Dojo Location</label>
+            <select name="location">
+                <option value="">-- select a location --</option>
+                <option value="Seattle">Seattle</option>
+                <option value="Miami">Miami</option>
+                <option value="Dallas">Dallas</option>
+                <option value="Chicago">Chicago</option>
+            </select>
+            
+            <label for="language">Favorite Language</label>
+            <select name="language" id="">
+                <option value="">-- select a language --</option>
+                <option value="Python">Python</option>
+                <option value="Java">Java</option>
+                <option value="PHP">PHP</option>
+                <option value="C++">C++</option>
+            </select>
+            
+            <label for="comments">Comment (optional)</label>
+            <textarea name="comments" cols="30" rows="10"></textarea>
+            
+            <button type="submit">Submit form</button>
+        </div>
+    </form>
+        
+
+
+
+
+</body>
+</html>

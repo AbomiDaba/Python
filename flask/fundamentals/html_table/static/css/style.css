@@ -1,0 +1,24 @@
+table, td, th{
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+table{
+    width: 700px;
+    margin: auto;
+    height: ;
+    
+}
+th{
+    padding-left: 0px;
+    background-color: rgb(80, 78, 78);
+    color: yellow;
+}
+tr:hover{
+    background-color: lightgray;
+}
+td{
+    text-align: center;
+}
+th, td{
+    height: 50px;
+}
